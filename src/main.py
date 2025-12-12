@@ -2,11 +2,15 @@
 import logging
 from pathlib import Path
 from datetime import datetime
+from dotenv import load_dotenv
 
 from feed_parser import FeedParser
 from filter_engine import FilterEngine
 from notifier import DiscordNotifier
 from db import SeenDB
+
+# .envファイルから環境変数を読み込み
+load_dotenv()
 
 # ログ設定
 LOG_DIR = Path(__file__).parent.parent / "logs"

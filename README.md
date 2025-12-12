@@ -54,7 +54,17 @@ pip install -r requirements.txt
 
 1. Discordサーバーの設定から「連携サービス」→「ウェブフック」を作成
 2. ウェブフックURLをコピー
-3. 環境変数に設定
+3. `.env`ファイルを作成して設定
+
+```bash
+# .env.example をコピー
+cp .env.example .env
+
+# .env ファイルを編集して、実際のWebhook URLを設定
+# DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/YOUR_ACTUAL_WEBHOOK_URL
+```
+
+**または**、環境変数として直接設定：
 
 ```bash
 # Linux/macOS
