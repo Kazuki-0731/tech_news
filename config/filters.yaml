@@ -163,6 +163,34 @@ per_feed:
       - "CVE"
     default_priority: 9  # デフォルト優先度を9に設定
 
+  "JPCERT/CC":
+    # JPCERT/CC（日本の公式セキュリティ機関）は全て重要
+    # summaryなし、タイトルのみのフィード
+    include_keywords:
+      - "注意喚起"
+      - "脆弱性"
+      - "security"
+      - "vulnerability"
+    priority_keywords:
+      - "注意喚起"  # タイトルに頻出
+      - "脆弱性"
+      - "緊急"
+      - "重要"
+
+  "IPA":
+    # IPA（情報処理推進機構）は全て重要
+    # summaryなし、タイトルのみのフィード
+    include_keywords:
+      - "脆弱性"
+      - "vulnerability"
+      - "CVE-"
+      - "セキュリティ"
+    priority_keywords:
+      - "脆弱性対策"
+      - "脆弱性について"
+      - "CVE-"
+      - "緊急"
+
   "窓の杜 (Impress Watch)":
     include_keywords:
       # 脆弱性関連
