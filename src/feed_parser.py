@@ -12,7 +12,7 @@ class FeedParser:
     def get_feeds(self):
         return self.config.get("feeds", [])
 
-    def fetch(self, feed_config, limit=20):
+    def fetch(self, feed_config, limit=5):
         entries = []
         try:
             parsed = feedparser.parse(feed_config["url"])
