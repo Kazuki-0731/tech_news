@@ -10,6 +10,30 @@
 - 重複排除（SQLiteで既読管理）
 - Discord Webhook経由での通知
 
+## カバーしている言語・エコシステム
+
+### プログラミング言語
+- **Node.js / JavaScript / TypeScript** - npm, Node.js Security Releases, GitHub Advisory
+- **Python** - pip, PyPI (GitHub Advisory経由)
+- **Dart / Flutter** - pub.dev (GitHub Advisory経由)
+- **Kotlin / Java** - Maven, Gradle (GitHub Advisory経由)
+- **Ruby** - RubyGems, Ruby Security, GitHub Advisory
+- **Swift / iOS** - CocoaPods, Apple Developer News
+- **Shell / Bash / Zsh** - Linux Security (Ubuntu Security経由)
+
+### プラットフォーム
+- **Android** - Android Developers Blog, Google Play Console関連
+- **iOS** - Apple Developer News, App Store審査関連
+- **Docker** - Container Security (GitHub Advisory経由)
+- **Linux / Ubuntu** - Ubuntu Security Notices
+
+### セキュリティ情報源
+- **NVD** - National Vulnerability Database (全般的なCVE情報)
+- **JPCERT/CC** - 日本のセキュリティ情報
+- **IPA** - 情報処理推進機構のセキュリティアラート
+- **GitHub Advisory** - 多言語対応のパッケージ脆弱性情報
+- **窓の杜** - 日本語の技術ニュース（High Severityのみ）
+
 ## ディレクトリ構成
 
 ```

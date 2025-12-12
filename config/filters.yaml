@@ -39,22 +39,67 @@ categories:
 
   package:
     include_keywords:
-      - "flutter"
-      - "dart"
+      # JavaScript/TypeScript
       - "npm"
       - "node"
+      - "nodejs"
+      - "javascript"
+      - "typescript"
+      # Python
+      - "python"
+      - "pip"
+      - "pypi"
+      # Dart/Flutter
+      - "flutter"
+      - "dart"
+      - "pub"
+      # Kotlin/Java
+      - "kotlin"
+      - "java"
+      - "maven"
+      - "gradle"
+      # Ruby
+      - "ruby"
+      - "gem"
+      - "rubygems"
+      # Swift
+      - "swift"
+      - "cocoapods"
+      # Shell
+      - "bash"
+      - "shell"
+      - "zsh"
+      # Docker
+      - "docker"
+      - "container"
+      # 重要度
       - "critical"
       - "high severity"
+      - "高"
+      - "重大"
     severity_filter:
       min_level: "medium"  # low は無視
 
   cve:
     include_keywords:
+      # モバイル
       - "android"
       - "ios"
+      # OS
       - "linux"
+      - "ubuntu"
+      # ブラウザ
       - "chrome"
+      - "safari"
+      - "firefox"
+      # 言語・ランタイム
       - "node"
+      - "nodejs"
+      - "python"
+      - "java"
+      - "kotlin"
+      - "ruby"
+      - "docker"
     cvss_filter:
       min_score: 7.0  # CVSS 7.0以上のみ
 

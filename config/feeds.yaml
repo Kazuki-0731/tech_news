@@ -12,10 +12,23 @@ feeds:
     url: "https://www.ipa.go.jp/security/rss/alert.rdf"
     category: "security"
 
-  # GitHub Security Advisories
-  - name: "GitHub Advisory"
+  # GitHub Security Advisories（全般）
+  - name: "GitHub Advisory (All)"
     url: "https://github.com/advisories.atom"
     category: "package"
+
+  # 言語・エコシステム別セキュリティ
+  - name: "Node.js Security Releases"
+    url: "https://nodejs.org/en/feed/releases.xml"
+    category: "package"
+
+  - name: "Ruby Security"
+    url: "https://www.ruby-lang.org/en/feeds/news.rss"
+    category: "package"
+
+  # 注: Python, Docker, その他の言語の脆弱性は
+  # GitHub Advisory (All) でカバーされます
+  # （npm, pip, maven, rubygems, pub, docker など全エコシステム対応）
 
   # Android/iOS
   - name: "Android Developers Blog"
