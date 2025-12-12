@@ -150,6 +150,19 @@ categories:
 
 # 特定フィード専用フィルタ
 per_feed:
+  "Node.js Security Releases":
+    # Node.js公式セキュリティリリースは全て重要
+    # フィード自体がセキュリティ専用なので優先度を強制的に引き上げ
+    include_keywords:
+      - "security"
+      - "releases"
+      - "vulnerability"
+    priority_keywords:
+      - "security releases"  # タイトルに必ず含まれる
+      - "vulnerability"
+      - "CVE"
+    default_priority: 9  # デフォルト優先度を9に設定
+
   "窓の杜 (Impress Watch)":
     include_keywords:
       # 脆弱性関連
