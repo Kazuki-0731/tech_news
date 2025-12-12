@@ -31,6 +31,11 @@ feeds:
     url: "https://ubuntu.com/security/notices/rss.xml"
     category: "os"
 
+  # 日本の技術ニュース
+  - name: "窓の杜 (Impress Watch)"
+    url: "https://forest.watch.impress.co.jp/data/rss/1.0/wf/feed.rdf"
+    category: "security"
+
   # 技術ニュース（補助）
   - name: "Hacker News (Top)"
     url: "https://hnrss.org/newest?points=100"

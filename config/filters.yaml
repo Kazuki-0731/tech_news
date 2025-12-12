@@ -60,6 +60,32 @@ categories:
 
 # 特定フィード専用フィルタ
 per_feed:
+  "窓の杜 (Impress Watch)":
+    include_keywords:
+      # 脆弱性関連
+      - "脆弱性"
+      - "セキュリティ"
+      - "security"
+      - "vulnerability"
+      # High Severity のみ
+      - "critical"
+      - "重大"
+      - "深刻"
+      - "緊急"
+      - "危険"
+      - "high"
+      - "悪用"
+      - "exploit"
+      - "ゼロデイ"
+      - "zero-day"
+      - "RCE"
+      - "リモートコード実行"
+    priority_keywords:
+      - "緊急"
+      - "critical"
+      - "ゼロデイ"
+      - "zero-day"
+
   "Hacker News (Top)":
     include_keywords:
       - "flutter"
