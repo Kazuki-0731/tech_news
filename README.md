@@ -251,6 +251,19 @@ DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/xxxx/yyyy
 
 **注意**: パスは絶対パスで指定してください。
 
+**cronを止める場合:**
+
+```bash
+# cron設定を編集して該当行を削除またはコメントアウト
+crontab -e
+
+# または全削除
+crontab -r
+
+# 設定を確認
+crontab -l
+```
+
 ### systemdタイマーで実行する場合（推奨）
 
 **tech_news.service**
@@ -285,7 +298,7 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-有効化：
+**有効化:**
 
 ```bash
 sudo systemctl enable tech_news.timer
@@ -293,6 +306,86 @@ sudo systemctl start tech_news.timer
 
 # 確認
 sudo systemctl status tech_news.timer
+```
+
+**停止・無効化:**
+
+```bash
+# タイマーを停止
+sudo systemctl stop tech_news.timer
+
+# タイマーを無効化（自動起動を停止）
+sudo systemctl disable tech_news.timer
+
+# サービスも停止（実行中の場合）
+sudo systemctl stop tech_news.service
+
+# 状態確認
+sudo systemctl status tech_news.timer
+sudo systemctl status tech_news.service
+```
+
+## データベース管理
+
+### seen.db（SQLite）の操作
+
+既読管理に使用しているSQLiteデータベースを直接操作できます。
+
+**データベースを開く:**
+
+```bash
+sqlite3 data/seen.db
+```
+
+**よく使うSQLコマンド:**
+
+```sql
+-- テーブル構造を確認
+.schema
+
+-- 全件表示
+SELECT * FROM seen;
+
+-- 件数確認
+SELECT COUNT(*) FROM seen;
+
+-- 最近の既読エントリ（10件）
+SELECT id, seen_at FROM seen ORDER BY seen_at DESC LIMIT 10;
+
+-- 特定のIDを検索
+SELECT * FROM seen WHERE id = 'xxxxx';
+
+-- 古いエントリを削除（30日以前）
+DELETE FROM seen WHERE seen_at < datetime('now', '-30 days');
+
+-- 全削除（初期化）
+DELETE FROM seen;
+
+-- データベースを最適化
+VACUUM;
+
+-- 終了
+.exit
+```
+
+**便利なコマンド:**
+
+```bash
+# ヘッダー付きで表示
+sqlite3 data/seen.db -header -column "SELECT * FROM seen LIMIT 10;"
+
+# CSVエクスポート
+sqlite3 data/seen.db -csv "SELECT * FROM seen;" > seen_backup.csv
+
+# 件数だけ確認
+sqlite3 data/seen.db "SELECT COUNT(*) FROM seen;"
+
+# データベースのバックアップ
+cp data/seen.db data/seen.db.backup_$(date +%Y%m%d)
+
+# データベースを完全リセット（再取得したい場合）
+rm data/seen.db
+# 次回実行時に自動再作成されます
 ```
 
 ## カスタマイズ
