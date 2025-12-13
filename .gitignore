@@ -11,6 +11,7 @@ ENV/
 # データベース
 data/*.db
 data/*.db-journal
+data/*.db.backup*
 
 # ログファイル
 logs/*.log

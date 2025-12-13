@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -9,9 +10,10 @@ def is_english_title(title):
     return not bool(re.search(japanese_pattern, title))
 
 class OllamaSummarizer:
-    def __init__(self, model="gemma2:9b", ollama_url="http://localhost:11434"):
-        self.model = model
-        self.ollama_url = ollama_url
+    def __init__(self, model=None, ollama_url=None):
+        # 環境変数から設定を読み込み、デフォルト値を使用
+        self.model = model or os.environ.get("OLLAMA_MODEL", "gemma2:9b")
+        self.ollama_url = ollama_url or os.environ.get("OLLAMA_URL", "http://localhost:11434")
         self.timeout = 30
 
     def generate_japanese_title(self, entry):

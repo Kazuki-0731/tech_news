@@ -146,13 +146,20 @@ ollama pull llama3.2
 
 **モデルの変更方法**
 
-デフォルトは `gemma2:9b` です。変更する場合は `src/summarizer.py` を編集：
+デフォルトは `gemma2:9b` です。環境変数で変更できます：
 
-```python
-class OllamaSummarizer:
-    def __init__(self, model="gemma2:9b", ollama_url="http://localhost:11434"):
-        # model を変更
+```bash
+# .env ファイルに追記
+OLLAMA_MODEL=qwen2.5:0.5b  # VPS/低スペック向け軽量版
+
+# または直接環境変数を設定
+export OLLAMA_MODEL=qwen2.5:0.5b
 ```
+
+**推奨モデル（スペック別）:**
+- **低スペック（メモリ1-2GB）**: `qwen2.5:0.5b` - 約400MB、軽量で高速
+- **中スペック（メモリ2-4GB）**: `gemma2:2b` - 約1.5GB
+- **高スペック（メモリ6GB以上）**: `gemma2:9b` - 約5.4GB、高精度（デフォルト）
 
 **Ollamaサーバーの起動**
 
